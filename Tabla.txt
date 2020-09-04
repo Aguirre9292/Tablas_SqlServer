@@ -1,0 +1,23 @@
+create table REGISTRO (
+   CODIGO               int                  not null,
+   PRODUCTO             varchar(25)          null,
+   TIPO_DE_PRODUCTO     varchar(25)          null,
+   constraint PK_REGISTRO primary key (CODIGO)
+)
+go
+
+create table FARMACIA (
+   CODIGO_P             int                  not null,
+   ID_FARMACIA          int                  null,
+   UBICACION            varchar(25)          null,
+   constraint PK_FARMACIA primary key (CODIGO_P)
+)
+go
+
+create table ENTREGA_DE_PRODUCTO (
+   CODIGO               int                  not null,
+   CODIGO_P             int                  not null,
+   FECHA_DE_ENTREGA     datetime             null,
+   constraint PK_ENTREGA_DE_PRODUCTO primary key (CODIGO, CODIGO_P)
+)
+go
